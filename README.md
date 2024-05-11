@@ -1,16 +1,12 @@
 # Ex.No: 11 Develop a application to add animations to ImageView,Move,blink,fade,clockwise,zoom,slide operations are perform in android studio.
 
-
 ## AIM:
-
 To develop a application to add animation to imageview,move,blink,fade,clockwise,zoom,slide operation using Android Studio.
 
 ## EQUIPMENTS REQUIRED:
-
 Android Studio(Latest Version)
 
 ## ALGORITHM:
-
 Step 1: Open Android Studio and then click on File -> New -> New project.
 
 Step 2: Then type the Application name as AndroidAnimations and click Next.
@@ -27,7 +23,6 @@ Step 7: in MainActivity file.
 
 Step 8: Save and run the application.
 
-
 ## PROGRAM:
 ```
 /*
@@ -36,7 +31,6 @@ Developed by: Ann Blessy Philips
 Registeration Number : 212222040008
 */
 ```
-
 ### In activity_main.xml :
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -58,7 +52,6 @@ Registeration Number : 212222040008
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.397"
         app:srcCompat="@drawable/image2" />
-
     <Button
         android:id="@+id/BTNblink"
         android:layout_width="wrap_content"
@@ -71,7 +64,6 @@ Registeration Number : 212222040008
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.602" />
-
     <Button
         android:id="@+id/BTNrotate"
         android:layout_width="wrap_content"
@@ -83,7 +75,6 @@ Registeration Number : 212222040008
         app:layout_constraintEnd_toStartOf="@+id/BTNfade"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.571" />
-
     <Button
         android:id="@+id/BTNfade"
         android:layout_width="wrap_content"
@@ -95,7 +86,6 @@ Registeration Number : 212222040008
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.571" />
-
     <Button
         android:id="@+id/BTNmove"
         android:layout_width="wrap_content"
@@ -107,7 +97,6 @@ Registeration Number : 212222040008
         app:layout_constraintEnd_toStartOf="@+id/BTNslide"
         app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/BTNslide"
         android:layout_width="wrap_content"
@@ -118,7 +107,6 @@ Registeration Number : 212222040008
         android:text="Slide"
         app:layout_constraintBottom_toTopOf="@+id/BTNstop"
         app:layout_constraintEnd_toStartOf="@+id/BTNzoom" />
-
     <Button
         android:id="@+id/BTNzoom"
         android:layout_width="wrap_content"
@@ -129,7 +117,6 @@ Registeration Number : 212222040008
         android:text="Zoom"
         app:layout_constraintBottom_toTopOf="@+id/BTNstop"
         app:layout_constraintEnd_toEndOf="parent" />
-
     <Button
         android:id="@+id/BTNstop"
         android:layout_width="wrap_content"
@@ -156,7 +143,6 @@ Registeration Number : 212222040008
         android:repeatCount="infinite"/>
 </set>
 ```
-
 ### In rotate.xml :
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -176,7 +162,6 @@ Registeration Number : 212222040008
         android:toDegrees="0" />
 </set>
 ```
-
 ### In fade.xml :
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -193,7 +178,6 @@ Registeration Number : 212222040008
         android:toAlpha="0" />
 </set>
 ```
-
 ### In move.xml :
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -204,7 +188,6 @@ Registeration Number : 212222040008
         android:duration="700" />
 </set>
 ```
-
 ### In slide.xml :
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -218,7 +201,6 @@ Registeration Number : 212222040008
         android:toYScale="0.0" />
 </set>
 ```
-
 ### In zoom.xml :
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -244,7 +226,6 @@ Registeration Number : 212222040008
     </scale>
 </set>
 ```
-
 ### In MainActivity.java :
 ```
 package com.example.animations;
@@ -265,7 +246,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         imageView = findViewById(R.id.imageView);
         blinkBTN = findViewById(R.id.BTNblink);
         rotateBTN = findViewById(R.id.BTNrotate);
@@ -284,7 +264,6 @@ public class MainActivity extends AppCompatActivity {
                 imageView.startAnimation(animation);
             }
         });
-
         rotateBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -294,7 +273,6 @@ public class MainActivity extends AppCompatActivity {
                 imageView.startAnimation(animation);
             }
         });
-
         fadeBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -304,7 +282,6 @@ public class MainActivity extends AppCompatActivity {
                 imageView.startAnimation(animation);
             }
         });
-
         moveBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -314,7 +291,6 @@ public class MainActivity extends AppCompatActivity {
                 imageView.startAnimation(animation);
             }
         });
-
         slideBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -324,7 +300,6 @@ public class MainActivity extends AppCompatActivity {
                 imageView.startAnimation(animation);
             }
         });
-
         zoomBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -334,7 +309,6 @@ public class MainActivity extends AppCompatActivity {
                 imageView.startAnimation(animation);
             }
         });
-
         stopBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -347,15 +321,8 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 ## OUTPUT
-
-![p1](https://github.com/AnnBlessy/animation/assets/119477835/5df37835-e8d1-4dba-9f73-69f5edec628f)
-
-![p2](https://github.com/AnnBlessy/animation/assets/119477835/24a7fdd5-4a79-46f5-a49d-21bdf105fb3b)
-
-![p3](https://github.com/AnnBlessy/animation/assets/119477835/7dd61cc2-a43c-4f57-9341-29cdc071f702)
-
-![p4](https://github.com/AnnBlessy/animation/assets/119477835/b6e4d39f-c18c-432f-b074-4029ba1937c4)
-
+![p1](https://github.com/AnnBlessy/animation/assets/119477835/7e40bd6f-8469-480d-ac8a-570679a3aaef) __ ![p2](https://github.com/AnnBlessy/animation/assets/119477835/7006628d-6a17-4d72-b4f8-3fa145f430bd)
+![p3](https://github.com/AnnBlessy/animation/assets/119477835/738c8252-a348-46b6-a4fa-2a1beb442c0d) __ ![p4](https://github.com/AnnBlessy/animation/assets/119477835/cd3aa92a-28fc-4c2f-990e-232db476c1fa)
 
 ## RESULT
 Thus, a Simple Android Application to add animations to ImageView,Move,blink,fade,clockwise,zoom,slide operations using Android Studio is developed and executed successfully.
